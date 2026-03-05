@@ -8,8 +8,6 @@ pub mod post {
             .send()
             .await?;
 
-        // This is the "Magic Line": 
-        // If status is 404, 401, or 500, it converts to an Error immediately.
         let result = result.error_for_status()?;
 
         let text = result.text().await?;
