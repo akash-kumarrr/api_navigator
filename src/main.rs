@@ -19,13 +19,10 @@ async fn main() {
     loop {
         let mut input = String::new();
         
-        // 1. Use print! instead of println!
         print!("command@grabl >>> ");
-        
-        // 2. Force the text to the screen immediately
+
         io::stdout().flush().expect("Failed to flush stdout");
 
-        // 3. Capture input
         io::stdin()
             .read_line(&mut input)
             .expect("Failed to read line");
@@ -37,7 +34,6 @@ async fn main() {
             break;
         }
 
-        // Logic for handling commands goes here
         run(command).await;
     }
 
